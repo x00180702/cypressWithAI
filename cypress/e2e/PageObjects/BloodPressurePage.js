@@ -1,5 +1,3 @@
-import { get } from "cypress/types/lodash";
-
 class BloodPressurePage {
 getSystolic() {
     return cy.get('#BP_Systolic');
