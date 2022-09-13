@@ -9,7 +9,7 @@
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
-    "commonPath": "cypress/integration",
-    "stepDefinitions": "cypress/integration/common"
+    "commonPath": "cypress/e2e",
+    "stepDefinitions": "cypress/e2e/common"
   }
 }

@@ -3,7 +3,7 @@ import BloodPressurePage from '../PageObjects/BloodPressurePage';
 const homePage=new BloodPressurePage();
 
 When("user goes to the {string} Application", (appValue) => {
-  if(appValue.equals("Blood Pressure"))
+  if(appValue == ("Blood Pressure"))
   cy.visit("https://bloodpressurecalculator.azurewebsites.net");
   else
   cy.visit("http://51.142.152.185:22137");
