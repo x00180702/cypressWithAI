@@ -10,7 +10,7 @@ getAge(){
     return cy.get('#BP_Age');
 }
 
-getAge(){
+getEmail(){
     return cy.get('#BP_Email');
 }
 
