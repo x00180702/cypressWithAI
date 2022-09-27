@@ -64,19 +64,19 @@ jobs:
       # to map boolean values to the tag strings
 
       # https://github.com/cypress-io/github-action
-      - name: Run sanity tests
+      - name: Run Mono tests
         if: ${{ github.event.inputs.bpTest == 'true' }}
         uses: cypress-io/github-action@v2
         with:
           install: false
-          env: grepTags=@sanity
+          env: grepTags=@bpTest
 
-      - name: Run adding tests
+      - name: Run Container tests
         if: ${{ github.event.inputs.bpcTest == 'true' }}
         uses: cypress-io/github-action@v2
         with:
           install: false
-          env: grepTags=@adding
+          env: grepTags=@bpcTest
 
       - name: Run complete tests
         if: ${{ github.event.inputs.complete == 'true' }}
