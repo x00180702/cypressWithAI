@@ -1,43 +1,14 @@
 name: End-to-end tests
-on:
-  workflow_dispatch:
-    inputs:
-      # these inputs will be shown to the user on GitHub Actions page
-      # and the user can simply check off the tags to run
-      sanity:
-        description: Run the tests tagged "@bpTest"
-        required: false
-        type: boolean
-      adding:
-        description: Run the tests tagged "@bpcTest"
-        required: false
-        type: boolean
+on: [push]
 jobs:
   cypress-run:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      # Install NPM dependencies, cache them correctly
-      # and run all Cypress tests
+
       - name: Cypress run cypress 
         uses: cypress-io/github-action@v2
         with:
-          runTests: false
-
-      - name: Start the server
-        run: npm start &
-
-      - name: Run Mono tests
-        if: ${{ github.event.inputs.bpTest == 'true' }}
-        uses: cypress-io/github-action@v2
-        with:
-          install: false
-          env: grepTags=@bpTest
-
-      - name: Run Container tests
-        if: ${{ github.event.inputs.bpcTest == 'true' }}
-        uses: cypress-io/github-action@v2
-        with:
-          install: false
-          env: grepTags=@bpcTest
+         start: npm start
+         env: grepTags=@bpTest
