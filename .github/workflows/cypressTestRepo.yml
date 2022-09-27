@@ -8,5 +8,24 @@ jobs:
         uses: actions/checkout@v2
       # Install NPM dependencies, cache them correctly
       # and run all Cypress tests
-      - name: Cypress run
-        uses: cypress-io/github-action@v4
+      - name: Cypress run cypress 
+        uses: cypress-io/github-action@v2
+        with:
+          runTests: false
+
+      - name: Start the server
+        run: npm start &
+
+      - name: Run Mono tests
+        if: ${{ github.event.inputs.mono == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@bpTest
+
+      - name: Run Container tests
+        if: ${{ github.event.inputs.container == 'true' }}
+        uses: cypress-io/github-action@v2
+        with:
+          install: false
+          env: grepTags=@bpcTest
