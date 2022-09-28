@@ -29,5 +29,4 @@ jobs:
 
       - name: Run tests with "@tag1" 🧪
         run: |
-          npx cypress-expect run \
-            --env grep=@bpTest \
+          npx cypress-tags run -e TAGS=\"@bpTest" --browser chrome --headless
