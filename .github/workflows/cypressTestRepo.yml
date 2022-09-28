@@ -26,9 +26,10 @@ jobs:
         with:
           # just perform install
           runTests: false
-          record: true
+          #record: true
 
       - name: Run tests with "@bpTest" 🧪
         run: |
-         npx cypress run --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpTest"
+         npx cypress run --env tags="@bpTest"
+       # npx cypress run --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpTest"
          
