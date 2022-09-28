@@ -20,16 +20,24 @@ module.exports = (on, config) => {
   // `on` is used to hook into various events Cypress emits
   // `config` is the resolved Cypress config
 }
-const cucumber = require('cypress-cucumber-preprocessor').default
+const createEsbuildPlugin =
+  require('@badeball/cypress-cucumber-preprocessor/esbuild').createEsbuildPlugin
 
-module.exports = (on, config) => {
-  on('file:preprocessor', cucumber())
-}
-
-// cypress/plugins/index.js
 const createBundler = require('@bahmutov/cypress-esbuild-preprocessor')
-module.exports = (on, config) => {
-  on('file:preprocessor', createBundler())
+const nodePolyfills =
+  require('@esbuild-plugins/node-modules-polyfill').NodeModulesPolyfillPlugin
+
+const addCucumberPreprocessorPlugin =
+  require('@badeball/cypress-cucumber-preprocessor').addCucumberPreprocessorPlugin
+
+module.exports = async (on, config) => {
+  await addCucumberPreprocessorPlugin(on, config) // to allow json to be produced
+  // To use esBuild for the bundler when preprocessing
+  on(
+    'file:preprocessor',
+    createBundler({
+      plugins: [nodePolyfills(), createEsbuildPlugin(config)],
+    })
+  )
+  return config
 }
-
-
