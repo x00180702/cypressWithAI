@@ -4,8 +4,8 @@
     "build": "^0.1.4"
   },
   "devDependencies": {
-    "cypress": "^10.7.0",
-    "cypress-cucumber-preprocessor": "^4.2.0"
+    "@badeball/cypress-cucumber-preprocessor": "^12.1.0",
+    "cypress": "^10.3.0",
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
