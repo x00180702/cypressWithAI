@@ -4,16 +4,12 @@
     "build": "^0.1.4"
   },
   "devDependencies": {
-    "@bahmutov/cypress-esbuild-preprocessor": "^2.1.5",
-    "cypress": "^10.9.0",
-    "cypress-cucumber-preprocessor": "^4.2.0",
-    "esbuild": "^0.15.9"
+    "cypress": "^10.7.0",
+    "cypress-cucumber-preprocessor": "^4.2.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
     "commonPath": "cypress/e2e",
-    "stepDefinitions": "cypress/e2e/common",
-    "filterSpecs": true,
-    "omitFiltered": true
+    "stepDefinitions": "cypress/e2e/common"
   }
 }
