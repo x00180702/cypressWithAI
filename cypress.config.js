@@ -24,10 +24,7 @@ module.exports = defineConfig({
       return require('./cypress/plugins/index.js')(on, config)
     },
     specPattern: 'cypress/e2e/**/*.{feature,features}',
-<<<<<<< Updated upstream
     supportFile: false,
     setupNodeEvent,
-=======
->>>>>>> Stashed changes
   },
 });

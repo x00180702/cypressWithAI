@@ -12,7 +12,11 @@
     "nonGlobalStepDefinitions": true,
     "commonPath": "cypress/e2e",
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     "stepDefinitions": "cypress/e2e/common",
+=======
+    "stepDefinitions": "cypress/e2e/common/common.spec.js",
+>>>>>>> Stashed changes
 =======
     "stepDefinitions": "cypress/e2e/common/common.spec.js",
 >>>>>>> Stashed changes
