@@ -29,4 +29,4 @@ jobs:
 
       - name: Run tests with "@tag1" 🧪
         run: |
-         npx cypress-tags run --env TAGS="@bpTest"
+         npx cypress run --env tags="@bpTest"
