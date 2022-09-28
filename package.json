@@ -1,10 +1,8 @@
 {
   "dependencies": {
-    "@badeball/cypress-cucumber-preprocessor": "^12.1.0",
-    "build": "^0.1.4"
+    "@badeball/cypress-cucumber-preprocessor": "^12.2.0"
   },
   "devDependencies": {
-    "cypress": "^10.7.0",
     "cypress-cucumber-preprocessor": "^4.2.0"
   },
   "cypress-cucumber-preprocessor": {
