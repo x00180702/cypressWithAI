@@ -5,7 +5,7 @@
   },
   "devDependencies": {
     "@badeball/cypress-cucumber-preprocessor": "^12.1.0",
-    "cypress": "^10.3.0",
+    "cypress": "^10.3.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": true,
