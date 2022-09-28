@@ -16,17 +16,6 @@ jobs:
     runs-on: ubuntu-20.04
     needs: install
     steps:
-      - name: Check out code 🛎
-        uses: actions/checkout@v2
-      # we re-install the dependencies
-      # in practice, this should pull the cached
-      # dependencies from the previous install job
-      - name: Install dependencies 📦
-        uses: cypress-io/github-action@v2
-        with:
-          # just perform install
-          runTests: false
-
       - name: Run tests with "@tag1" 🧪
         run: |
          npx cypress run --env tags="@bpTest"
