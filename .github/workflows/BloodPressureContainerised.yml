@@ -1,0 +1,35 @@
+name: ci
+on: [push, pull_request]
+jobs:
+  install:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Check out code 🛎
+        uses: actions/checkout@v2
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          # just perform install
+          runTests: false
+  
+  tests2:        
+    runs-on: ubuntu-20.04
+    needs: install
+    steps:
+      - name: Check out code 🛎
+        uses: actions/checkout@v2
+      # we re-install the dependencies
+      # in practice, this should pull the cached
+      # dependencies from the previous install job
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          # just perform install
+          runTests: false
+          #record: true
+
+      - name: Run tests with "@bpcTest" 🧪
+        run: |
+         npx cypress run --env tags="@bpcTest"
+       # npx cypress run --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpcTest"
+         
