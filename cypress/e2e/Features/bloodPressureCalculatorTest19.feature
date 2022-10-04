@@ -10,7 +10,7 @@ Feature: Boundry Value Analysis - Testing
     And user enters "<AgeValue>" in the Age field on the 'Blood Pressure' application
     Then user clicks on the submit button on the 'Blood Pressure' application
     Then "<Result>" results are displayed on the 'Blood Pressure' application
-    Then "<Age>" results are displayed under the 'Age' field on the 'Blood Pressure' application
+    Then "<AGE>" results are displayed under the 'Age' field on the 'Blood Pressure' application
     Then "<MAP>" results are displayed under the 'Mean Arterial Pressure' field on the 'Blood Pressure' application
     Then "<PP>" results are displayed under the 'Pulse Pressure' field on the 'Blood Pressure' application
 
