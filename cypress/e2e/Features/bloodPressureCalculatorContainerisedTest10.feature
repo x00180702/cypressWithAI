@@ -4,7 +4,7 @@ Feature: Empty Age Field
   Scenario: Test Case 10
 
     When user goes to the "Blood Pressure Containerised" Application
-    And user enters "bloodpressureCT10" in the Systolic field on the 'Blood Pressure' application
+    And user enters "bloodpressureCT10" in the Email field on the 'Blood Pressure' application
     And user clears Systolic field on the 'Blood Pressure' application
     And user clears Diastolic field on the 'Blood Pressure' application
     And user clears Age field on the 'Blood Pressure' application
