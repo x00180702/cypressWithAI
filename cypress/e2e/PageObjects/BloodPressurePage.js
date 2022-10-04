@@ -106,6 +106,17 @@ getFieldErrorMessage(userValue, field){
     return cy.get('#BP_'+field+'').invoke('attr', 'validationMessage').should('have.text', userValue);
 }
 
+getTableHeader(){
+    return cy.get('div[id="logoTable"]').should('have.text', 'Your Previous Readings');
+}
+
+getTableBody(userValue){
+    return cy.get('div[id="results"]').should('have.text', userValue);
+}
+
+getNotTableBody(userValue){
+    return cy.get('div[id="results"]').should('not.have.text', userValue);
+}
 
 
 

@@ -7,7 +7,7 @@ When("user goes to the {string} Application", (appValue) => {
   if(appValue == ("Blood Pressure"))
   cy.visit("https://bloodpressurecalculator.azurewebsites.net");
   else
-  cy.visit("http://51.142.152.185:22137");
+  cy.visit("http://20.150.152.147:22137");
 });
 
 
@@ -150,5 +150,20 @@ Then("{string} error message is displayed on the 'Blood Pressure Containerised' 
 
 Then("{string} error message is displayed under the {string} field on the 'Blood Pressure Containerised' application", (userValue, field) => {
   homePage.getFieldErrorMessageBPC(userValue, field);
+
+});
+
+Then("'Your Previous Readings' header is displayed on the Table on the 'Blood Pressure Containerised' application", () => {
+  homePage.getHomeHeader();
+
+});
+
+Then("{string} is displayed on Table on the 'Blood Pressure Containerised' application", (userValue) => {
+  homePage.getTableBody(userValue);
+
+});
+
+Then("{string} is not displayed on Table on the 'Blood Pressure Containerised' application", (userValue) => {
+  homePage.getNotTableBody(userValue);
 
 });
