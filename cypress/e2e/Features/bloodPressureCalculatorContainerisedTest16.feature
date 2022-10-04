@@ -5,7 +5,7 @@ Feature: Invalid (char) values
   Scenario: Test Case 16
 
     When user goes to the "Blood Pressure Containerised" Application
-    And user enters "bloodpressureCT13" in the Systolic field on the 'Blood Pressure' application
+    And user enters "bloodpressureCT13" in the Email field on the 'Blood Pressure' application
     And user enters "e" in the Systolic field on the 'Blood Pressure' application
     And user enters "e" in the Diastolic field on the 'Blood Pressure' application
     And user enters "e" in the Age field on the 'Blood Pressure' application
