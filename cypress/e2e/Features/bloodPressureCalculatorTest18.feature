@@ -9,10 +9,10 @@ Feature: Check using scenario outline - Negative Test
     And user enters "<Diastolic>" in the Diastolic field on the 'Blood Pressure' application
     And user enters "<AgeValue>" in the Age field on the 'Blood Pressure' application
     Then user clicks on the submit button on the 'Blood Pressure' application
-    Then "<Result>" results are displayed on the 'Blood Pressure' application
-    Then "<AGE>" results are displayed under the 'Age' field on the 'Blood Pressure' application
-    Then "<MAP>" results are displayed under the 'Mean Arterial Pressure' field on the 'Blood Pressure' application
-    Then "<PP>" results are displayed under the 'Pulse Pressure' field on the 'Blood Pressure' application
+    Then "<Result>" results are not displayed on the 'Blood Pressure' application
+    Then "<AGE>" results are not displayed under the 'Age' field on the 'Blood Pressure' application
+    Then "<MAP>" results are not displayed under the 'Mean Arterial Pressure' field on the 'Blood Pressure' application
+    Then "<PP>" results are not displayed under the 'Pulse Pressure' field on the 'Blood Pressure' application
 
 Examples:
 | Systolic | Diastolic | AgeValue | Result                  | AGE                                                | MAP                         | PP                 |
