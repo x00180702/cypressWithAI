@@ -20,4 +20,4 @@ Examples:
 | bloodpressureScenarioCT1 |   70     |    40   |   15   |Low Blood Pressure      |Average value for your age group [15-19] is 120/78|Mean Arterial Pressure : 96|Pulse Pressure : 30|
 | bloodpressureScenarioCT2 |   90     |    60   |   20   |Normal Blood Pressure    |Average value for your age group [20-24] is 120/79|Mean Arterial Pressure : 130|Pulse Pressure : 30|
 | bloodpressureScenarioCT3 |   140    |    80   |   25   |High Blood Pressure |Average value for your age group [25-29] is 121/80|Mean Arterial Pressure : 193|Pulse Pressure : 60|
-| bloodpressureScenarioCT4 |   180    |    90  |   30   |High Blood Pressure     |Average valuefor your age group [30-34] is 123/82|Mean Arterial Pressure : 246|Pulse Pressure : 81|
+| bloodpressureScenarioCT4 |   180    |    90  |   30   |High Blood Pressure     |Average valuefor your age group [30-34] is 123/82|Mean Arterial Pressure : 240|Pulse Pressure : 80|
