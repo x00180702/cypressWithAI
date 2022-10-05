@@ -116,11 +116,11 @@ getFieldErrorMessageBPC(userValue, field){
 }
 
 getTableHeader(){
-    return cy.get('div[id="logoTable"]').should('have.text', 'Your Previous Readings');
+    return cy.get('#container > :nth-child(5)').should('have.text', 'Your Previous Readings');
 }
 
 getTableBody(userValue){
-    return cy.get('div[id="results"]').should('have.text', userValue);
+    return cy.get('div[id="results"]').contains(userValue);
 }
 
 getNotTableBody(userValue){
