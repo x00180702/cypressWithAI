@@ -29,8 +29,7 @@ module.exports = defineConfig({
     specPattern: 'cypress/e2e/**/*.{feature,features}',
     supportFile: false,
     setupNodeEvent,
-    "experimentalSessionAndOrigin": true,
-    "chromeWebSecurity": false
+
   },
   
 });
