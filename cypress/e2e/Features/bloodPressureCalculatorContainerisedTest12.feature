@@ -14,4 +14,4 @@ Feature: Check Mean Arterial Pressure
     Then "Low Blood Pressure" results are displayed on the 'Blood Pressure' application
     Then "Average value for your age group [20-24] is 120/79" results are displayed under the 'Age' field on the 'Blood Pressure' application
     Then "Mean Arterial Pressure : 105" results are displayed under the 'Mean Arterial Pressure' field on the 'Blood Pressure' application
-    Then "Pulse Pressure : 31" results are displayed under the 'Pulse Pressure' field on the 'Blood Pressure' application
+    Then "Pulse Pressure : 30" results are displayed under the 'Pulse Pressure' field on the 'Blood Pressure' application

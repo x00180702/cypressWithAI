@@ -149,7 +149,7 @@ Then("{string} error message is displayed on the 'Blood Pressure Containerised' 
 });
 
 Then("{string} error message is displayed under the {string} field on the 'Blood Pressure Containerised' application", (userValue, field) => {
-  homePage.getFieldErrorMessageBPC(userValue, field);
+  homePage.getFieldErrorMessage(userValue, field);
 
 });
 

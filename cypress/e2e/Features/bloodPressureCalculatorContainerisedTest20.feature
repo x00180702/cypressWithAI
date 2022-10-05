@@ -20,7 +20,7 @@ Feature: Multiple Scenarios in 1 SCript
     And user enters "40" in the Diastolic field on the 'Blood Pressure' application
     And user enters "20" in the Age field on the 'Blood Pressure' application
     Then user clicks on the submit button on the 'Blood Pressure' application
-    Then "Ideal Blood Pressure" results are displayed on the 'Blood Pressure' application
+    Then "Normal Blood Pressure" results are displayed on the 'Blood Pressure' application
 
   Scenario: Multi-Test Case 3
 
@@ -30,7 +30,7 @@ Feature: Multiple Scenarios in 1 SCript
     And user enters "82" in the Diastolic field on the 'Blood Pressure' application
     And user enters "55" in the Age field on the 'Blood Pressure' application
     Then user clicks on the submit button on the 'Blood Pressure' application
-    Then "PreHigh Blood Pressure" results are displayed on the 'Blood Pressure' application
+    Then "High Blood Pressure" results are displayed on the 'Blood Pressure' application
 
   Scenario: Multi-Test Case 4
 

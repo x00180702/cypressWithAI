@@ -14,4 +14,4 @@ Feature: Check Pulse Pressure
     Then "Normal Blood Pressure" results are displayed on the 'Blood Pressure' application
     Then "Average value for your age group [45-49] is 127/84" results are displayed under the 'Age' field on the 'Blood Pressure' application
     Then "Mean Arterial Pressure : 150" results are displayed under the 'Mean Arterial Pressure' field on the 'Blood Pressure' application
-    Then "Pulse Pressure : 41" results are displayed under the 'Pulse Pressure' field on the 'Blood Pressure' application
+    Then "Pulse Pressure : 40" results are displayed under the 'Pulse Pressure' field on the 'Blood Pressure' application

@@ -103,6 +103,15 @@ getErrorMessageBPC(userValue){
 }
 
 getFieldErrorMessage(userValue, field){
+
+
+    return  cy.get('#BP_'+field+'').then(($input) => {
+        expect($input[0].validationMessage).to.eq(userValue)
+      })
+
+}
+
+getFieldErrorMessageBPC(userValue, field){
     return cy.get('#BP_'+field+'').invoke('attr', 'validationMessage').should('have.text', userValue);
 }
 

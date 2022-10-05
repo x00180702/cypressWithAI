@@ -10,4 +10,4 @@ Feature: Ideal Blood Pressure
     And user enters "60" in the Diastolic field on the 'Blood Pressure' application
     And user enters "60" in the Age field on the 'Blood Pressure' application
     Then user clicks on the submit button on the 'Blood Pressure' application
-    Then "Ideal Blood Pressure" results are displayed on the 'Blood Pressure' application
+    Then "Normal Blood Pressure" results are displayed on the 'Blood Pressure' application
