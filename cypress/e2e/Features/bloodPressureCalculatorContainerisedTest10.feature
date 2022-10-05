@@ -9,11 +9,11 @@ Feature: Empty Age Field
     And user clears Diastolic field on the 'Blood Pressure' application
     And user clears Age field on the 'Blood Pressure' application
     Then user clicks on the submit button on the 'Blood Pressure' application
-    Then "Please fill in this field." error message is displayed under the "Systolic" field on the 'Blood Pressure Containerised' application
+    Then "Please fill out this field." error message is displayed under the "Systolic" field on the 'Blood Pressure Containerised' application
     And user enters "130" in the Systolic field on the 'Blood Pressure' application
     Then user clicks on the submit button on the 'Blood Pressure' application
-    Then "Please fill in this field." error message is displayed under the "Diastolic" field on the 'Blood Pressure Containerised' application
+    Then "Please fill out this field." error message is displayed under the "Diastolic" field on the 'Blood Pressure Containerised' application
     And user enters "40" in the Diastolic field on the 'Blood Pressure' application
     Then user clicks on the submit button on the 'Blood Pressure' application
-    Then "Please fill in this field." error message is displayed under the "Age" field on the 'Blood Pressure Containerised' application
+    Then "Please fill out this field." error message is displayed under the "Age" field on the 'Blood Pressure Containerised' application
    

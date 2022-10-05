@@ -154,7 +154,7 @@ Then("{string} error message is displayed under the {string} field on the 'Blood
 });
 
 Then("'Your Previous Readings' header is displayed on the Table on the 'Blood Pressure Containerised' application", () => {
-  homePage.getHomeHeader();
+  homePage.getTableHeader();
 
 });
 
