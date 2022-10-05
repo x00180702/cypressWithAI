@@ -7,7 +7,7 @@ When("user goes to the {string} Application", (appValue) => {
   if(appValue == ("Blood Pressure"))
   cy.visit("https://bloodpressurecalculator.azurewebsites.net");
   else
-  cy.visit("http://20.150.152.147:22137");
+  cy.visit("http://20.14.20.35:22137");
 });
 
 
