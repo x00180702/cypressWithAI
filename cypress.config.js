@@ -3,6 +3,9 @@ const createBundler = require("@bahmutov/cypress-esbuild-preprocessor");
 const preprocessor = require("@badeball/cypress-cucumber-preprocessor");
 const createEsbuildPlugin = require("@badeball/cypress-cucumber-preprocessor/esbuild");
 
+
+
+
 async function setupNodeEvent(on, config) {
   await preprocessor.addCucumberPreprocessorPlugin(on, config);
 
@@ -26,5 +29,8 @@ module.exports = defineConfig({
     specPattern: 'cypress/e2e/**/*.{feature,features}',
     supportFile: false,
     setupNodeEvent,
+    "experimentalSessionAndOrigin": true,
+    "chromeWebSecurity": false
   },
+  
 });
