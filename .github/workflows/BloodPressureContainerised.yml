@@ -4,9 +4,6 @@ jobs:
   install:
     runs-on: ubuntu-20.04
     steps:
-      - name: Install Chrome 🛎
-      - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
       - name: Check out code 🛎
         uses: actions/checkout@v2
       - name: Install dependencies 📦
@@ -15,6 +12,9 @@ jobs:
           # just perform install
           runTests: false
   
+      - uses: browser-actions/setup-chrome@latest
+      - run: chrome --version
+      
   tests2:        
     runs-on: ubuntu-20.04
     needs: install
