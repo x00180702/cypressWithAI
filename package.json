@@ -18,6 +18,12 @@
     "commonPath": "cypress/e2e",
     "stepDefinitions": "cypress/e2e/common/common.spec.js",
     "filterSpecs": true,
-    "omitFiltered": true
+    "omitFiltered": true,
+  },
+  "scripts": {
+    "test": "cypress run",
+    "test:chrome": "cypress run --browser chrome",
+    "report:merge": "mochawesome-merge cypress/results/json/*.json > index.json",
+    "report:generate": "marge index.json --reportDir public --assetsDir public/assets --reportPageTitle index.html"
   }
 }
