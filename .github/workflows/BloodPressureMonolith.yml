@@ -1,5 +1,7 @@
-name: ci
-on: [push, pull_request]
+name: Blood Pressure Monolith yml
+on:
+ schedule:
+    - cron: '0 8 1-31 * *'
 jobs:
   install:
     runs-on: ubuntu-20.04
