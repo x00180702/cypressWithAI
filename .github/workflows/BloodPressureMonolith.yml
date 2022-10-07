@@ -1,10 +1,14 @@
 name: Blood Pressure Monolith yml
 on:
- schedule:
-    - cron: '0 8 1-31 * *'
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '13 9-18 * * *'
 jobs:
   install:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
     steps:
       - name: Check out code 🛎
         uses: actions/checkout@v2
