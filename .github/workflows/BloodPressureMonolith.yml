@@ -1,11 +1,11 @@
 name: Blood Pressure Monolith yml
-on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  schedule:
-    - cron: '5/15 9-18 * * *'
+# on:
+#   push:
+#     branches: [ main ]
+#   pull_request:
+#     branches: [ main ]
+#   schedule:
+#     - cron: '5/15 9-18 * * *'
 jobs:
   install:
     runs-on: ubuntu-latest
