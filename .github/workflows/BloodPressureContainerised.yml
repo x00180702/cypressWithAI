@@ -1,7 +1,7 @@
 name: Blood Pressure Containerised yml
 on:
   schedule:
-    - cron: '0,30 9-18 * * *'
+    - cron: '20,40 9-21 * * *'
 jobs:
   install:
     runs-on: ubuntu-latest
