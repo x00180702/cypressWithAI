@@ -2,7 +2,7 @@ name: Blood Pressure Containerised yml
 on:
   workflow_dispatch:
 #   schedule:
-#     - cron: '01,11,20,40 13-22 * * *'
+#     - cron: '40 03-09 * * *'
 jobs:
   install:
     runs-on: ubuntu-latest
