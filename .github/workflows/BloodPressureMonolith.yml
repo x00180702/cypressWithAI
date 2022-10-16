@@ -1,8 +1,8 @@
 name: Blood Pressure Monolith yml
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '4/15 11-14 * * *'
+#   schedule:
+#     - cron: '4/15 11-14 * * *'
 jobs:
   install:
     runs-on: ubuntu-latest
