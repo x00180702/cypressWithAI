@@ -31,20 +31,9 @@ jobs:
           runTests: false
           record: true
 
-      - name: Run tests with "@bpTest" 🧪
-        run: |
-         npx percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@test"
 
-      - name: Merge test results into one
-        run: npm run report:merge
-      
-      - name: Generate HTML report
-        run: npm run report:generate
-      
-      - name: Deploy report page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+      - name: Percy Test
+        run: npx @percy/cli |
+         npx percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@test"       
+        
+
