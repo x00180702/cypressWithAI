@@ -19,6 +19,7 @@ async function setupNodeEvent(on, config) {
   return config;
 }
 module.exports = defineConfig({
+  chromeWebSecurity: false,
   projectId: 'gfeo6u',
   e2e: {
     // We've imported your old cypress plugins here.
