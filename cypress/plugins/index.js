@@ -30,15 +30,10 @@ const nodePolyfills =
 const addCucumberPreprocessorPlugin =
   require('@badeball/cypress-cucumber-preprocessor').addCucumberPreprocessorPlugin
 
-  // In cypress/plugins/index.js
-let percyHealthCheck = require('@percy/cypress/task')
-
-
 module.exports = async (on, config) => {
   await addCucumberPreprocessorPlugin(on, config) // to allow json to be produced
   // To use esBuild for the bundler when preprocessing
   on(
-    "task", percyHealthCheck ,
     'file:preprocessor',
     createBundler({
       plugins: [nodePolyfills(), createEsbuildPlugin(config)],
