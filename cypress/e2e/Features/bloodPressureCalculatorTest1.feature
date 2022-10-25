@@ -1,4 +1,4 @@
-@bpTest
+@bpTest @test
 
 Feature: Low Blood Pressure
 
