@@ -33,7 +33,7 @@ jobs:
 
 
       - name: Percy Test
-        run: npx @percy/cli |
+        run: npm @percy/cli |
          npx percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@test"       
         
 
