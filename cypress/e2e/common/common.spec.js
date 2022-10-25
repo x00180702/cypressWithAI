@@ -49,6 +49,7 @@ And ("user clears Age field on the 'Blood Pressure' application", () => {
 
 When("user clicks on the submit button on the 'Blood Pressure' application", () => {
   homePage.getSubmitButton();
+  cy.percySnapshot('SubmitButton');
 });
 
 
