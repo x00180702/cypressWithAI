@@ -37,7 +37,7 @@ jobs:
         
       - name: Run tests with "@bpTest" 🧪
         run: |
-         npx percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpTest" --config video=false,screenshotOnRunFailure=true
+         npx percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpTest" --config video=false,screenshotOnRunFailure=false
         env:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
           
