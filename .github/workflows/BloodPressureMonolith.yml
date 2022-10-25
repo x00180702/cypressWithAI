@@ -3,36 +3,48 @@ on:
   workflow_dispatch:
 #   schedule:
 #     - cron: '4/15 11-14 * * *'
-jobs: 
-  install-dependencies:
-    name: Install Dependencies
+jobs:
+  install:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Check out code 🛎
+        uses: actions/checkout@v2
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
         with:
-          cache: 'yarn'
-          node-version: 16.10.0
-      - uses: bahmutov/npm-install@v1.8.25
+          # just perform install
+          runTests: false
+  
+  tests2:        
+    runs-on: ubuntu-latest
+    needs: install
+    steps:
+      - name: Check out code 🛎
+        uses: actions/checkout@v2
+      # we re-install the dependencies
+      # in practice, this should pull the cached
+      # dependencies from the previous install job
+      - name: Install dependencies 📦
+        uses: cypress-io/github-action@v2
+        with:
+          # just perform install
+          runTests: false
+          record: true
+
+      - name: Run tests with "@bpTest" 🧪
+        run: |
+         npx percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpTest"
+
+      - name: Merge test results into one
+        run: npm run report:merge
       
-         
-  cypress-percy-visual-tests:
-    needs: [install-dependencies]
-    runs-on: ubuntu-latest
-    container: cypress/included:10.10.0 # save time on not having to install cypress
-    steps:
-      - uses: actions/checkout@v3
-
-      - uses: bahmutov/npm-install@v1.8.25 # save time on dependencies
-        with: { useRollingCache: true }
-
-      # We could also just add this step onto the original cypress-e2e-test job
-      - name: Cypress visual tests 🧪
-        uses: cypress-io/github-action@v4.2.0
+      - name: Generate HTML report
+        run: npm run report:generate
+      
+      - name: Deploy report page
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          install: false # no need to install because of the above 2
-          start: yarn dev # concurrently starts ui and api servers
-          browser: chrome
-          command: yarn percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@test" --config video=false,screenshotOnRunFailure=true
-        env:
-          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
