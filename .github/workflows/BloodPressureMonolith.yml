@@ -14,7 +14,19 @@ jobs:
         with:
           # just perform install
           runTests: false
-  
+ 
+  install-dependencies:
+    name: Install Dependencies
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version: 16.10.0
+      - uses: bahmutov/npm-install@v1.8.25
+      
+      
   tests2:        
     runs-on: ubuntu-latest
     needs: install
@@ -31,9 +43,27 @@ jobs:
           runTests: false
           record: true
 
+      - name: Run tests with "@bpTest" 🧪
+        run: |
+         npx cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@test"
+         
+  cypress-percy-visual-tests:
+    needs: [install-dependencies]
+    runs-on: ubuntu-latest
+    container: cypress/included:10.10.0 # save time on not having to install cypress
+    steps:
+      - uses: actions/checkout@v3
 
-      - name: Percy Test
-        run: npm @percy/cli |
-         npx percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@test"       
-        
+      - uses: bahmutov/npm-install@v1.8.25 # save time on dependencies
+        with: { useRollingCache: true }
 
+      # We could also just add this step onto the original cypress-e2e-test job
+      - name: Cypress visual tests 🧪
+        uses: cypress-io/github-action@v4.2.0
+        with:
+          install: false # no need to install because of the above 2
+          start: yarn dev # concurrently starts ui and api servers
+          browser: chrome
+          command: yarn percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@test" --config video=false,screenshotOnRunFailure=true
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
