@@ -4,10 +4,13 @@ import { Given,When,Then,And } from '@badeball/cypress-cucumber-preprocessor';
 const homePage=new BloodPressurePage();
 
 When("user goes to the {string} Application", (appValue) => {
-  if(appValue == ("Blood Pressure"))
+  if(appValue == ("Blood Pressure")){
   cy.visit("https://bloodpressurecalculator.azurewebsites.net");
-  else
+  cy.percySnapshot('Homepage test');  
+  }
+  else{
   cy.visit("http://20.90.193.20:22137");
+  }
  
 });
 
@@ -49,7 +52,6 @@ And ("user clears Age field on the 'Blood Pressure' application", () => {
 
 When("user clicks on the submit button on the 'Blood Pressure' application", () => {
   homePage.getSubmitButton();
-  cy.percySnapshot('Homepage test');
 });
 
 
