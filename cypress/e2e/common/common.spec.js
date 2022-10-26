@@ -6,7 +6,7 @@ const homePage=new BloodPressurePage();
 When("user goes to the {string} Application", (appValue) => {
   if(appValue == ("Blood Pressure")){
   cy.visit("https://bloodpressurecalculator.azurewebsites.net");
-  cy.percySnapshot('Homepage test');  
+  cy.percySnapshot;  
   }
   else{
   cy.visit("http://20.90.193.20:22137");
