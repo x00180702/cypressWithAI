@@ -1,12 +1,12 @@
 import BloodPressurePage from '../PageObjects/BloodPressurePage';
 import { Given,When,Then,And } from '@badeball/cypress-cucumber-preprocessor';
-
+import '@percy/cypress';
 const homePage=new BloodPressurePage();
 
 When("user goes to the {string} Application", (appValue) => {
   if(appValue == ("Blood Pressure")){
   cy.visit("https://bloodpressurecalculator.azurewebsites.net");
-  cy.percySnapshot;  
+  cy.percySnapshot('Login');  
   }
   else{
   cy.visit("http://20.90.193.20:22137");
@@ -19,7 +19,7 @@ When("user goes to the {string} Application", (appValue) => {
 And ("user enters {string} in the Systolic field on the 'Blood Pressure' application", (systolicValue) => {
 homePage.getSystolic().clear();  
 homePage.getSystolic().type(systolicValue);
-homePage.getS
+
 });
 
 
@@ -52,6 +52,7 @@ And ("user clears Age field on the 'Blood Pressure' application", () => {
 
 When("user clicks on the submit button on the 'Blood Pressure' application", () => {
   homePage.getSubmitButton();
+  cy.percySnapshot('Login');
 });
 
 
