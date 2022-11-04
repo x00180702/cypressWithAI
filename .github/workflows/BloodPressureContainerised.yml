@@ -1,8 +1,8 @@
-name: Blood Pressure Containerised yml
+name: Blood Pressure Monolith yml
 on:
   workflow_dispatch:
-#   schedule:
-#     - cron: '05/20 02-23 * * *'
+  schedule:
+    - cron: '05/15 14-16 * * *'
 jobs:
   install:
     runs-on: ubuntu-latest
@@ -15,9 +15,6 @@ jobs:
           # just perform install
           runTests: false
   
-      - uses: browser-actions/setup-chrome@latest
-      - run: chrome --version
-      
   tests2:        
     runs-on: ubuntu-latest
     needs: install
@@ -32,23 +29,15 @@ jobs:
         with:
           # just perform install
           runTests: false
-          #record: true
+          record: true
 
-      - name: Run tests with "@bpcTest" 🧪
+      - name: App Percy
+        run: npm install --save-dev @percy/cli
+        
+        
+      - name: Run tests with "@bpTest" 🧪
         run: |
-         npx cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpcTest"
-       # npx cypress run --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpcTest"
-         
-      - name: Merge test results into one
-        run: npm run report:merge
-      
-      - name: Generate HTML report
-        run: npm run report:generate
-      
-      - name: Deploy report page
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+         npx percy exec -- cypress run --headless --record --key b877676e-70aa-40b3-84da-261dcc19e396 --env tags="@bpcTest" --config screenshotOnRunFailure=true
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
+          
