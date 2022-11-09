@@ -116,7 +116,7 @@ getFieldErrorMessageBPC(userValue, field){
 }
 
 getTableHeader(){
-    return cy.get('#container > :nth-child(5)').should('have.text', 'Your Previous Readings');
+    return cy.get('#container > :nth-child(7)').should('have.text', 'Your Previous Readings');
 }
 
 getTableBody(userValue){
