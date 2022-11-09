@@ -10,7 +10,7 @@ When("user goes to the {string} Application", (appValue) => {
   }
   else{
   cy.visit("http://20.26.164.96:22137");
-  cy.percySnapshot('Login'); 
+  cy.percySnapshot('Login bp'); 
   }
  
 });
